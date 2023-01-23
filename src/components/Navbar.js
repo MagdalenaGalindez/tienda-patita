@@ -1,17 +1,24 @@
-import React from 'react';
+import { Link } from 'react-router-dom'
 const Navbar = () => {
+    const categories = ['Home', 'Nosotros', 'Contacto', 'Gato', 'Veterinaria'];
+
     return ( <
         nav >
         <
-        h1 > Mi App < /h1> <
-        ul >
+        div >
         <
-        li > Home < /li> <
-        li > Nosotros < /li> <
-        li > Contacto < /li> <
-        li > Gatos < /li> <
-        li > Veterinaria < /li> </
-        nav >
+        h1 > My App < /h1>  <
+        ul > {
+            categories.map((category, index) => ( <
+                li key = { index } >
+                <
+                Link to = { "/${category.toLowerCase()} " } > { category } < /Link>   <
+                /li >
+            ))
+        } <
+        /ul>  < /
+        div > <
+        /nav>
     );
 }
 export default Navbar;
