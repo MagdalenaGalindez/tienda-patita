@@ -3,7 +3,7 @@ import { CartWidget } from './CartWidget';
 
 
 const Navbar = () => {
-    const categories = ['Home', 'Nosotros', 'Contacto', 'Gato', 'Veterinaria'];
+    const categories = ['Home', 'Nosotros', 'Artículos Decorativos'];
 
     return (
         <nav>
