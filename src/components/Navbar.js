@@ -1,21 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { CartWidget } from './CartWidget';
 
 
 const Navbar = () => {
-    const categories = ['Home', 'Nosotros', 'Artículos Decorativos'];
-
     return (
         <nav>
             <div>
                 <h1>My App</h1>
-                <ul>
-                    {categories.map((category, index) => (
-                        <li key={index}>
-                            <a href={`/${category.toLowerCase()}`}>{category}</a>
-                        </li >
-                    ))}
-                </ul>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/shop">Artículos</Link>
+                        </li>
+                        <li>
+                            <Link to="/about-us">AboutUs</Link>
+                        </li>
+                    </ul>
+                </nav>
                 <CartWidget />
             </div>
         </nav>

@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer'
+import { Home } from './components/paginas/Home';
+import { AboutUs } from './components/paginas/AboutUs';
+import { ArticulosDecorativos } from './components/paginas/ArticulosDecorativos';
 
 
 function App() {
@@ -11,7 +13,10 @@ function App() {
             <Navbar />
 
             <Routes>
-                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/about-us" element={< AboutUs />} />
+                <Route path="/shop" element={< ArticulosDecorativos />} />
+                <Route path="/" element={< Home/>} />
+
             </Routes>
         </BrowserRouter>
     );
