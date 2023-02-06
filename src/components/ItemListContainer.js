@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ItemList } from './ItemList';
 
@@ -19,13 +19,23 @@ const sampleItems = [
 ]
 
 
+const fetchProducts = async () => new Promise(resolve => {
+    setTimeout(() => {
+        resolve(sampleItems)
+    }, 2000)
+})
+
+
 const ItemListContainer = () => {
 
     const [items, setItems] = useState(null)
 
-    setTimeout(() => {
-        setItems(sampleItems)
-    }, 2000);
+
+    useEffect(async () => {
+        const products = await fetchProducts()
+
+        setItems(products)
+    }, [])
 
 
     if (!items) {
